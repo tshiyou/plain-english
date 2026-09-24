@@ -1,6 +1,6 @@
 # plain-english
 
-This project gives Claude a set of rules for writing in plain, clear English. This README explains how the rules work, how to use them on claude.ai and how to change them.
+This project gives Claude a set of rules for writing in plain, clear English. This README explains how the rules work, how to use them in Claude Code and on claude.ai, and how to change them.
 
 Claude gets the rules in two ways:
 
@@ -10,6 +10,25 @@ Claude gets the rules in two ways:
 ## What it does
 
 The rules help Claude write for the ordinary person in the street. The reader should understand the text in one quick reading.
+
+## Use in Claude Code
+
+You need Git and Claude Code on your computer. The commands below work on macOS and Linux. Run them in a terminal:
+
+```
+git clone https://github.com/tshiyou/plain-english.git ~/.claude/skills/plain-english
+mkdir -p ~/.claude/output-styles
+ln -s ~/.claude/skills/plain-english/output-style/plain-english.md ~/.claude/output-styles/plain-english.md
+```
+
+The first command downloads the rules into the folder where Claude Code looks for skills. The other two commands link the output style into the folder where Claude Code looks for output styles.
+
+Restart Claude Code. You can then use the rules in two ways:
+
+- Type `/plain-english` followed by the text you want rewritten. Claude also uses the skill on its own when you ask it to rewrite text in plain English.
+- Type `/output-style` and choose Plain English. Every reply then follows the core rules.
+
+To get the latest rules, run `git -C ~/.claude/skills/plain-english pull`.
 
 ## Use on claude.ai
 
